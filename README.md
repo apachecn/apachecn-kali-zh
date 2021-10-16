@@ -8,6 +8,13 @@
 * [在线阅读（Gitee）](https://apachecn.gitee.io/apachecn-kali-zh/)
 * [ApacheCN 学习资源](http://docs.apachecn.org/)
 
+## 目录
+
++   [Kali Linux 秘籍 中文版](docs/kali-linux-cookbook-zh/SUMMARY.md)
++   [Kali Linux 网络扫描秘籍 中文版](docs/kali-linux-network-scanning-cookbook-zh/SUMMARY.md)
++   [Kali Linux Web 渗透测试秘籍 中文版](docs/kali-linux-web-pentest-cookbook-zh/SUMMARY.md)
++   [Kali Linux 无线渗透测试入门指南](docs/kali-linux-wireless-pentest-zh/SUMMARY.md)
+
 ## 贡献指南
 
 本项目需要校对，欢迎大家提交 Pull Request。
