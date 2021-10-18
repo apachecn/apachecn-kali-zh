@@ -14,6 +14,16 @@
 +   [Kali Linux 网络扫描秘籍 中文版](docs/kali-linux-network-scanning-cookbook-zh/SUMMARY.md)
 +   [Kali Linux Web 渗透测试秘籍 中文版](docs/kali-linux-web-pentest-cookbook-zh/SUMMARY.md)
 +   [Kali Linux 无线渗透测试入门指南](docs/kali-linux-wireless-pentest-zh/SUMMARY.md)
++   [Kali NetHunter 渗透测试实用指南](docs/handson-pentest-kali-nethunter/SUMMARY.md)
++   [Kali Linux 2018：通过渗透测试确保安全](docs/kali-linux-2018-assure-sec-pentest/SUMMARY.md)
++   [Kali Linux 2018：Windows 渗透测试](docs/kali-linux-2018-win-pentest/SUMMARY.md)
++   [Kali Linux：道德黑客秘籍](docs/kali-linux-ethical-hacker-cb/SUMMARY.md)
++   [Kali Linux 入侵和利用秘籍](docs/kali-linux-intru-exp-cb/SUMMARY.md)
++   [Kali Linux 无线渗透测试秘籍](docs/kali-linux-wless-pentest-cb/SUMMARY.md)
++   [Kali Linux 2019 学习手册](docs/learn-kali-linux-2019/SUMMARY.md)
++   [精通 Kali Linux 高级渗透测试](docs/master-kali-linux-adv-pentest/SUMMARY.md)
++   [精通 Kali Linux Web 渗透测试](docs/master-kali-linux-web-pentest/SUMMARY.md)
++   [Kali Linux Web 渗透测试中文第三版](docs/web-pentest-kali-linux-3e/SUMMARY.md)
 
 ## 贡献指南
 
