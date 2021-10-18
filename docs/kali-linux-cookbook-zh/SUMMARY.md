@@ -1,5 +1,5 @@
 + [Kali Linux 秘籍 中文版](README.md)
-+ [第一章 安装和启动Kali](ch1.md)
++ [第一章 安装和启动 Kali](ch1.md)
 + [第二章 定制 Kali Linux](ch2.md)
 + [第三章 高级测试环境](ch3.md)
 + [第四章 信息收集](ch4.md)

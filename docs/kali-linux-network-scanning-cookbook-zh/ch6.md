@@ -19,7 +19,7 @@
 
 ## 6.1 使用模糊测试来识别缓冲区溢出
 
-识别缓冲区溢出漏洞的最有效的技术之一是模糊测试。 模糊测试通过将精巧的或随机数据传递给函数，来测试与各种输入相关的结果。 在正确的情况下，输入数据可能逃离其指定的缓冲区，并流入相邻的寄存器或内存段。 此过程将中断执行流程并导致应用程序或系统崩溃。 在某些情况下，缓冲区溢出漏洞也可以用于执行未经授权的代码。 在这个秘籍中，我们会讨论如何通过开发自定义的Fuzzing工具，来测试缓冲区溢出漏洞。
+识别缓冲区溢出漏洞的最有效的技术之一是模糊测试。 模糊测试通过将精巧的或随机数据传递给函数，来测试与各种输入相关的结果。 在正确的情况下，输入数据可能逃离其指定的缓冲区，并流入相邻的寄存器或内存段。 此过程将中断执行流程并导致应用程序或系统崩溃。 在某些情况下，缓冲区溢出漏洞也可以用于执行未经授权的代码。 在这个秘籍中，我们会讨论如何通过开发自定义的 Fuzzing 工具，来测试缓冲区溢出漏洞。
 
 ### 准备
 
@@ -218,7 +218,7 @@ smurf 攻击是历史上用于执行分布式拒绝服务（DDoS）放大攻击�
 
 ### 准备
 
-要执行smurf攻击，您需要有一个LAN，上面运行多个系统。 提供的示例将 Ubuntu 用作扫描目标。 有关设置 Ubuntu 的更多信息，请参阅本书第一章中的“安装 Ubuntu Server”秘籍。
+要执行 smurf 攻击，您需要有一个 LAN，上面运行多个系统。 提供的示例将 Ubuntu 用作扫描目标。 有关设置 Ubuntu 的更多信息，请参阅本书第一章中的“安装 Ubuntu Server”秘籍。
 
 ### 操作步骤
 
@@ -328,7 +328,7 @@ Sent 100 packets.
 
 ## 6.4 DNS 放大 DoS 攻击
 
-DNS放大攻击通过对给定域执行所有类型记录的伪造查询，来利用开放的 DNS 解析器。 通过同时向多个开放的解析器发送请求来使用 DDoS 组件，可以提高这种攻击的效率。
+DNS 放大攻击通过对给定域执行所有类型记录的伪造查询，来利用开放的 DNS 解析器。 通过同时向多个开放的解析器发送请求来使用 DDoS 组件，可以提高这种攻击的效率。
 
 ### 准备
 
@@ -379,7 +379,7 @@ google.com. 1545677 7200 1800 1209600 300
 ;; MSG SIZE  rcvd: 35
 ```
 
-在提供的示例中，与`google.com`域相关的所有记录类型的请求返回了一个响应，包含11个A记录，1个AAAA记录，4个NS记录和1个SOA记录。 DNS放大攻击的效率与响应大小直接相关。 我们现在将尝试使用 Scapy 中构建的数据包执行相同的操作。 要发送我们的 DNS 查询请求，我们必须首先构建此请求的层级。 我们需要构建的第一层是 IP 层：
+在提供的示例中，与`google.com`域相关的所有记录类型的请求返回了一个响应，包含 11 个 A 记录，1 个 AAAA 记录，4 个 NS 记录和 1 个 SOA 记录。 DNS 放大攻击的效率与响应大小直接相关。 我们现在将尝试使用 Scapy 中构建的数据包执行相同的操作。 要发送我们的 DNS 查询请求，我们必须首先构建此请求的层级。 我们需要构建的第一层是 IP 层：
 
 ```
 root@KaliLinux:~# scapy Welcome to Scapy (2.2.0) 
@@ -430,7 +430,7 @@ root@KaliLinux:~# scapy Welcome to Scapy (2.2.0)
 >>> u.dport 53
 ```
 
-要构建我们的请求的 UDP 层，我们将使用与IP层相同的技术。 在提供的示例中，`UDP` 对象赋给了`u`变量。 如前所述，可以通过调用`display()`函数来确定默认配置。 在这里，我们可以看到源和目标端口的默认值都列为`domain`。 您可能能猜到，这表示与端口 53 相关的 DNS服 务。DNS 是一种常见的服务，通常可以在网络系统上发现。 要确认这一点，我们可以通过引用变量名和属性直接调用该值。 既然已经构建了 IP 和 UDP 层，我们需要构建 DNS 层：
+要构建我们的请求的 UDP 层，我们将使用与 IP 层相同的技术。 在提供的示例中，`UDP` 对象赋给了`u`变量。 如前所述，可以通过调用`display()`函数来确定默认配置。 在这里，我们可以看到源和目标端口的默认值都列为`domain`。 您可能能猜到，这表示与端口 53 相关的 DNS 服 务。DNS 是一种常见的服务，通常可以在网络系统上发现。 要确认这一点，我们可以通过引用变量名和属性直接调用该值。 既然已经构建了 IP 和 UDP 层，我们需要构建 DNS 层：
 
 ```
 >>> d = DNS() 
@@ -455,7 +455,7 @@ root@KaliLinux:~# scapy Welcome to Scapy (2.2.0)
   ar= None 
 ```
 
-为了构建我们的请求的DNS层，我们将使用与 IP 和 UDP 层相同的技术。 在提供的示例中，DNS 对象赋给了`d`变量。 如前所述，可以通过调用`display()`函数来确定默认配置。 在这里，我们可以看到有几个值需要修改：
+为了构建我们的请求的 DNS 层，我们将使用与 IP 和 UDP 层相同的技术。 在提供的示例中，DNS 对象赋给了`d`变量。 如前所述，可以通过调用`display()`函数来确定默认配置。 在这里，我们可以看到有几个值需要修改：
 
 ```
 >>> d.rd = 1 
@@ -504,7 +504,7 @@ RD 位需要被激活; 这可以通过将`rd`值设置为 1 来实现。此外�
   qclass= IN 
 ```
 
-`qname`值需要设置为要查询的域。 另外，`qtype`需要通过传递一个整数值 255 来设置为`ALL`。通过再次调用`display()`函数，我们可以验证是否已经调整了配置。 现在问题记录已经配置完毕，问题记录对象应该赋给DNS `qd`值：
+`qname`值需要设置为要查询的域。 另外，`qtype`需要通过传递一个整数值 255 来设置为`ALL`。通过再次调用`display()`函数，我们可以验证是否已经调整了配置。 现在问题记录已经配置完毕，问题记录对象应该赋给 DNS `qd`值：
 
 ```
 >>> d.qd = q 
@@ -605,7 +605,7 @@ Received 50 packets, got 1 answers, remaining 0 packets
 <IP  version=4L ihl=5L tos=0x0 len=378 id=29706 flags= frag=0L ttl=128 proto=udp chksum=0x4750 src=208.67.220.220 dst=172.16.36.232 options=[] |<UDP  sport=domain dport=domain len=358 chksum=0xf360 |<DNS  id=0 qr=1L opcode=QUERY aa=0L tc=0L rd=1L ra=1L z=0L rcode=ok qdcount=1 ancount=17 nscount=0 arcount=0 qd=<DNSQR  qname='google.com.' qtype=ALL qclass=IN |> an=<DNSRR  rrname='google.com.' type=A rclass=IN ttl=188 rdata='74.125.228.103' |<DNSRR  rrname='google.com.' type=A rclass=IN ttl=188 rdata='74.125.228.102' |<DNSRR  rrname='google.com.' type=A rclass=IN ttl=188 rdata='74.125.228.98' |<DNSRR  rrname='google.com.' type=A rclass=IN ttl=188 rdata='74.125.228.96' |<DNSRR  rrname='google. com.' type=A rclass=IN ttl=188 rdata='74.125.228.99' |<DNSRR  rrname='google.com.' type=A rclass=IN ttl=188 rdata='74.125.228.110' |<DNSRR  rrname='google.com.' type=A rclass=IN ttl=188 rdata='74.125.228.100' |<DNSRR  rrname='google.com.' type=A rclass=IN ttl=188 rdata='74.125.228.97' |<DNSRR  rrname='google.com.' type=A rclass=IN ttl=188 rdata='74.125.228.104' |<DNSRR  rrname='google. com.' type=A rclass=IN ttl=188 rdata='74.125.228.105' |<DNSRR  rrname='google.com.' type=A rclass=IN ttl=188 rdata='74.125.228.101' |<DNSRR  rrname='google.com.' type=AAAA rclass=IN ttl=234 rdata='2607 :f8b0:4004:803::1002' |<DNSRR  rrname='google.com.' type=NS rclass=IN ttl=171376 rdata='ns2.google.com.' |<DNSRR  rrname='google.com.' type=NS rclass=IN ttl=171376 rdata='ns1.google.com.' |<DNSRR  rrname='google. com.' type=NS rclass=IN ttl=171376 rdata='ns3.google.com.' |<DNSRR  rrname='google.com.' type=NS rclass=IN ttl=171376 rdata='ns4.google.com.' |<DNSRR  rrname='google.com.' type=SOA rclass=IN ttl=595 rdata='\xc1\x06\ tdns-admin\xc0\x0c\x00\x17\xd0`\x00\x00\x1c \x00\x00\x07\x08\x00\x12u\ x00\x00\x00\x01,' |>>>>>>>>>>>>>>>>> ns=None ar=None |>>> 
 ```
 
-该响应确认了我们已成功构建所需的请求，并且我们已请求了一个相当大的有效内容，其中包括`google.com`域的11个A记录，1个AAAA记录，4个NS记录和1个SOA记录。 此练习清楚地表明，请求的响应明显大于请求本身。 为了使这个放大攻击有效，它需要通过伪造源 IP 地址重定向到我们的目标：
+该响应确认了我们已成功构建所需的请求，并且我们已请求了一个相当大的有效内容，其中包括`google.com`域的 11 个 A 记录，1 个 AAAA 记录，4 个 NS 记录和 1 个 SOA 记录。 此练习清楚地表明，请求的响应明显大于请求本身。 为了使这个放大攻击有效，它需要通过伪造源 IP 地址重定向到我们的目标：
 
 ```
 >>> i.src = "172.16.36.135" 
@@ -637,7 +637,7 @@ admin@ubuntu:~$ sudo tcpdump -i eth0 src 208.67.220.220 -vv
 tcpdump: listening on eth0, link-type EN10MB (Ethernet), capture size 65535 bytes 
 ```
 
-在提供的示例中，TCPdump 配置将捕获`eth0`接口上，来自`208.67.220.220`源地址（查询的DNS服务器的地址）的所有流量。 然后，我们可以使用`send()`函数发送我们的请求：
+在提供的示例中，TCPdump 配置将捕获`eth0`接口上，来自`208.67.220.220`源地址（查询的 DNS 服务器的地址）的所有流量。 然后，我们可以使用`send()`函数发送我们的请求：
 
 ```
 >>> send(request) 
@@ -733,7 +733,7 @@ len= None
 chksum= None
 ```
 
-要构建我们的请求的 UDP 层，我们将使用与IP层相同的技术。 在提供的示例中，`UDP` 对象赋给了`u`变量。 如前所述，可以通过调用`display()`函数来确定默认配置。 在这里，我们可以看到源和目标端口的默认值都列为`domain`。 您可能能猜到，这表示与端口 53 相关的 DNS服 务。你可能已经猜到，它需要修改为 SNMP 相关的端口：
+要构建我们的请求的 UDP 层，我们将使用与 IP 层相同的技术。 在提供的示例中，`UDP` 对象赋给了`u`变量。 如前所述，可以通过调用`display()`函数来确定默认配置。 在这里，我们可以看到源和目标端口的默认值都列为`domain`。 您可能能猜到，这表示与端口 53 相关的 DNS 服 务。你可能已经猜到，它需要修改为 SNMP 相关的端口：
 
 ```
 >>> u.dport = 161 
@@ -937,7 +937,7 @@ tcpdump: listening on eth0, link-type EN10MB (Ethernet), capture size 96 bytes
 0 packets dropped by kernel 
 ```
 
-在所提供的示例中，TCPdump 配置为捕获`eth0`接口上，来自源IP地址`172.16.36.134`（SNMP 主机的IP地址）的流量。
+在所提供的示例中，TCPdump 配置为捕获`eth0`接口上，来自源 IP 地址`172.16.36.134`（SNMP 主机的 IP 地址）的流量。
 
 ### 工作原理
 
@@ -1006,7 +1006,7 @@ NTP  放大攻击的效率取决于 NTP  查询的响应大小。 另外，可�
 
 ## 6.7 SYN 泛洪 DoS 攻击
 
-SYN 泛洪 DoS攻击是一种资源消耗攻击。 它的原理是向作为攻击目标的服务相关的远程端口发送大量 TCP SYN 请求。 对于目标服务接收的每个初始 SYN 分组，然后会发送出 SYN + ACK 分组并保持连接打开，来等待来自发起客户端的最终 ACK 分组。 通过使用这些半开请求使目标过载，攻击者可以使服务无响应。
+SYN 泛洪 DoS 攻击是一种资源消耗攻击。 它的原理是向作为攻击目标的服务相关的远程端口发送大量 TCP SYN 请求。 对于目标服务接收的每个初始 SYN 分组，然后会发送出 SYN + ACK 分组并保持连接打开，来等待来自发起客户端的最终 ACK 分组。 通过使用这些半开请求使目标过载，攻击者可以使服务无响应。
 
 ### 准备
 
@@ -1215,7 +1215,7 @@ Sockstress DoS 攻击涉及到与目标服务相关的 TCP 端口建立一系列
 
 ### 准备
 
-为了使用 Scapy 对目标执行Sockstress DoS 攻击，你需要有一个运行 TCP 网络服务的远程系统。 提供的示例使用 Metasploitable2 的实例用。 有关设置 Metasploitable2 的更多信息，请参阅本书第一章中的“安装 Metasploitable2”秘籍。 此外，本节需要使用文本编辑器（如 VIM 或 Nano）将脚本写入文件系统。 有关编写脚本的更多信息，请参阅本书第一章中的“使用文本编辑器（VIM 和 Nano）”秘籍。
+为了使用 Scapy 对目标执行 Sockstress DoS 攻击，你需要有一个运行 TCP 网络服务的远程系统。 提供的示例使用 Metasploitable2 的实例用。 有关设置 Metasploitable2 的更多信息，请参阅本书第一章中的“安装 Metasploitable2”秘籍。 此外，本节需要使用文本编辑器（如 VIM 或 Nano）将脚本写入文件系统。 有关编写脚本的更多信息，请参阅本书第一章中的“使用文本编辑器（VIM 和 Nano）”秘籍。
 
 ### 操作步骤
 
@@ -1305,7 +1305,7 @@ root@KaliLinux:~# ./sock_stress.py 172.16.36.131 21 20
 The onslaught has begun...use Ctrl+C to stop the attack
 ```
 
-通过在没有任何提供的参数的情况下执行脚本，脚本将返回预期的语法和用法。脚本在执行时接受三个参数。这些参数包括目标 IP 地址，sock stress DoS所发送的端口号，以及将用于执行 sock stress DoS 的线程或并发进程的数量。每个线程以生成 0 到 65,535 之间的整数值开始。此范围表示可分配给源端口的全部可能值。定义源和目的地端口地址的 TCP 报头的部分在长度上都是 16 比特。每个位可以为值 1 或 0。因此，有`2 ** 16`或 65,536 个可能的 TCP 端口地址。单个源端口只能维持单个连接，因此通过为每个连接生成唯一的源端口地址，我们可以大大提高攻击的效率。一旦攻击开始，我们可以通过检查在目标服务器上建立的活动连接，来验证它是否正常工作：
+通过在没有任何提供的参数的情况下执行脚本，脚本将返回预期的语法和用法。脚本在执行时接受三个参数。这些参数包括目标 IP 地址，sock stress DoS 所发送的端口号，以及将用于执行 sock stress DoS 的线程或并发进程的数量。每个线程以生成 0 到 65,535 之间的整数值开始。此范围表示可分配给源端口的全部可能值。定义源和目的地端口地址的 TCP 报头的部分在长度上都是 16 比特。每个位可以为值 1 或 0。因此，有`2 ** 16`或 65,536 个可能的 TCP 端口地址。单个源端口只能维持单个连接，因此通过为每个连接生成唯一的源端口地址，我们可以大大提高攻击的效率。一旦攻击开始，我们可以通过检查在目标服务器上建立的活动连接，来验证它是否正常工作：
 
 ```
 msfadmin@metasploitable:~$ netstat | grep ESTABLISHED 
@@ -1478,7 +1478,7 @@ Host script results:
 
 ## 6.10 Metasploit DoS 攻击
 
-Metasploit框架有许多辅助模块脚本，可用于执行 DoS 攻击。 这个特定的秘籍演示了如何找到 DoS 模块，确定模块的使用方式，以及如何执行它们。
+Metasploit 框架有许多辅助模块脚本，可用于执行 DoS 攻击。 这个特定的秘籍演示了如何找到 DoS 模块，确定模块的使用方式，以及如何执行它们。
 
 ### 准备
 
@@ -1661,9 +1661,9 @@ msf  auxiliary(ms06_063_trans) > run
 
 本练习中演示的 Metasploit DoS 辅助模块是缓冲区溢出攻击的示例。 一般来说，缓冲区溢出能够导致拒绝服务，因为它们可能导致任意数据被加载到非预期的内存段。 这可能中断执行流程，并导致服务或操作系统崩溃。
 
-## 6.11 使用 exploit-db 执行DoS 攻击
+## 6.11 使用 exploit-db 执行 DoS 攻击
 
-exploit-db 是针对所有类型的平台和服务的，公开发布的漏洞利用集合。 exploit-db 拥有许多可用于执行DoS攻击的漏洞。 这个特定的秘籍演示了如何在 exploit-db 中找到DoS漏洞，确定漏洞的用法，进行必要的修改并执行它们。
+exploit-db 是针对所有类型的平台和服务的，公开发布的漏洞利用集合。 exploit-db 拥有许多可用于执行 DoS 攻击的漏洞。 这个特定的秘籍演示了如何在 exploit-db 中找到 DoS 漏洞，确定漏洞的用法，进行必要的修改并执行它们。
 
 ### 准备
 
@@ -1702,7 +1702,7 @@ root@KaliLinux:~# grep SMB /usr/share/exploitdb/files.csv | grep dos | grep py |
 14607,platforms/windows/dos/14607.py,"Microsoft SMB Server Trans2 Zero Size Pool Alloc (MS10-054)",2010-08-10,"Laurent Gaffie",windows,dos,0 
 ```
 
-我们可以继续缩小搜索结果，使其尽可能具体。 在提供的示例中，我们查找了 SMB 服务的任何 Python DoS 脚本，但是我们寻找的不是 Windows 7 平台的。 `gre`p中的`-v`选项可用于从结果中排除内容。 通常最好将所需的漏洞利用复制到另一个位置，以便不会修改 exploit 数据库目录的内容：
+我们可以继续缩小搜索结果，使其尽可能具体。 在提供的示例中，我们查找了 SMB 服务的任何 Python DoS 脚本，但是我们寻找的不是 Windows 7 平台的。 `gre`p 中的`-v`选项可用于从结果中排除内容。 通常最好将所需的漏洞利用复制到另一个位置，以便不会修改 exploit 数据库目录的内容：
 
 ```
 root@KaliLinux:~# mkdir smb_exploit 

@@ -5,9 +5,9 @@
 译者：[飞龙](https://github.com/wizardforcel)
 
 + [在线阅读](https://www.gitbook.com/book/wizardforcel/kali-linux-wireless-pentest/details)
-+ [PDF格式](https://www.gitbook.com/download/pdf/book/wizardforcel/kali-linux-wireless-pentest)
-+ [EPUB格式](https://www.gitbook.com/download/epub/book/wizardforcel/kali-linux-wireless-pentest)
-+ [MOBI格式](https://www.gitbook.com/download/mobi/book/wizardforcel/kali-linux-wireless-pentest)
++ [PDF 格式](https://www.gitbook.com/download/pdf/book/wizardforcel/kali-linux-wireless-pentest)
++ [EPUB 格式](https://www.gitbook.com/download/epub/book/wizardforcel/kali-linux-wireless-pentest)
++ [MOBI 格式](https://www.gitbook.com/download/mobi/book/wizardforcel/kali-linux-wireless-pentest)
 + [代码仓库](http://git.oschina.net/wizardforcel/kali-linux-wireless-pentest)
 
 ## 赞助我

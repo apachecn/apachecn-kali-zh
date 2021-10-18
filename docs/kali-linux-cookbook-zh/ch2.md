@@ -6,11 +6,11 @@
 
 > 协议：[CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-这一章会向你介绍Kali的定制，便于你更好地利用它。我们会涉及到ATI和英伟达GPU技术的安装和配置，以及后面章节所需的额外工具。基于ATI和英伟达GPU的显卡允许我们使用它们的图像处理单元（GPU）来执行与CPU截然不同的操作。我们会以ProxyChains的安装和数字信息的加密来结束这一章。
+这一章会向你介绍 Kali 的定制，便于你更好地利用它。我们会涉及到 ATI 和英伟达 GPU 技术的安装和配置，以及后面章节所需的额外工具。基于 ATI 和英伟达 GPU 的显卡允许我们使用它们的图像处理单元（GPU）来执行与 CPU 截然不同的操作。我们会以 ProxyChains 的安装和数字信息的加密来结束这一章。
 
 ## 2.1 准备内核头文件
 
-有时我们需要使用所需的内核头文件来编译代码。内核头文件是Linux内核的源文件。这个秘籍中，我们会解释准备内核头文件所需的步骤，便于以后使用。
+有时我们需要使用所需的内核头文件来编译代码。内核头文件是 Linux 内核的源文件。这个秘籍中，我们会解释准备内核头文件所需的步骤，便于以后使用。
 
 ### 准备
 
@@ -47,7 +47,7 @@
 
 ## 2.2 安装 Broadcom 驱动
 
-在这个秘籍中，我们将要安装 Broadcom 官方的Linux混合无线驱动。 使用Broadcom 无线USB适配器可以让我们在Kali上连接我们的无线USB接入点。对于这本书的其余秘籍，我们假设Broadcom 无线驱动已经安装。
+在这个秘籍中，我们将要安装 Broadcom 官方的 Linux 混合无线驱动。 使用 Broadcom 无线 USB 适配器可以让我们在 Kali 上连接我们的无线 USB 接入点。对于这本书的其余秘籍，我们假设 Broadcom 无线驱动已经安装。
 
 ### 准备
 
@@ -57,7 +57,7 @@
 
 让我们开始安装 Broadcom 驱动：
 
-1.  打开终端窗口，从[http://www.broadcom.com/support/802.11/linux_sta.php](http://www.broadcom.com/support/802.11/linux_sta.php)下载合适的Broadcom 驱动：
+1.  打开终端窗口，从[http://www.broadcom.com/support/802.11/linux_sta.php](http://www.broadcom.com/support/802.11/linux_sta.php)下载合适的 Broadcom 驱动：
 
     ```
     cd /tmp/ 
@@ -73,13 +73,13 @@
     tar xvfz hybrid-portsrc_x86_64-v5_100_82_112.tar.gz –C /tmp/ broadcom
     ```
     
-3.  修改`wl_cfg80211.c`文件，由于5.100.82.112版本中有个bug，会阻止小于2.6.39内核版本上的编译：
+3.  修改`wl_cfg80211.c`文件，由于 5.100.82.112 版本中有个 bug，会阻止小于 2.6.39 内核版本上的编译：
 
     ```
     vim /tmp/broadcom/src/wl/sys/wl_cfg80211.c
     ```
     
-    观察代码段的1814行：
+    观察代码段的 1814 行：
     
     ```c
     #if LINUX_VERSION_CODE > KERNEL_VERSION(2, 6, 39)
@@ -129,15 +129,15 @@
     
     其中`<module>`应为`b43`、`ssb`或`wl`。
     
-9.  最后，将新模块添加到Linux内核中，来使它成为启动进程的一部分：
+9.  最后，将新模块添加到 Linux 内核中，来使它成为启动进程的一部分：
 
     ```
     modprobe wl
     ```
 
-## 2.3 安装和配置ATI显卡驱动
+## 2.3 安装和配置 ATI 显卡驱动
 
-这个秘籍中，我们会详细讲解ATI显卡驱动的安装和配置，在此之前需要AMD Accelerated Parallel Processing (APP) SDK、OepnCL和CAL++。我们可以利用 ATI Stream技术的优势来运行计算密集型任务 -- 它们通常运行在CPU上 -- 使它们更快更高效地执行。更多ATI Stream技术相关的详细信息，请访问[www.amd.com/stream]( www.amd.com/stream)。
+这个秘籍中，我们会详细讲解 ATI 显卡驱动的安装和配置，在此之前需要 AMD Accelerated Parallel Processing (APP) SDK、OepnCL 和 CAL++。我们可以利用 ATI Stream 技术的优势来运行计算密集型任务 -- 它们通常运行在 CPU 上 -- 使它们更快更高效地执行。更多 ATI Stream 技术相关的详细信息，请访问[www.amd.com/stream]( www.amd.com/stream)。
 
 ### 准备
 
@@ -145,9 +145,9 @@
 
 ### 操作步骤
 
-让我们开始安装和配置ATI驱动：
+让我们开始安装和配置 ATI 驱动：
 
-1.  下载系统所需的ATI显示驱动：
+1.  下载系统所需的 ATI 显示驱动：
 
     ```
     cd /tmp/ 
@@ -174,7 +174,7 @@
     apt-get install libroot-python-dev libboost-python-dev libboost1.40-all-dev cmake
     ```
     
-5.  下载并解压 AMD APP SDK，根据你的CPU架构：
+5.  下载并解压 AMD APP SDK，根据你的 CPU 架构：
 
     ```
     wget http://developer.amd.com/Downloads/AMD-APP-SDK-v2.6-lnx64.tgz 
@@ -183,13 +183,13 @@
     cd AMD-APP-SDK-v2.6-lnx64
     ```
     
-6.  通过下列命令安装AMD APP SDK：
+6.  通过下列命令安装 AMD APP SDK：
 
     ```
     sh Install-AMD-APP.sh
     ```
     
-7.  在`.bashsrc`文件中设置ATI Stream的路径：
+7.  在`.bashsrc`文件中设置 ATI Stream 的路径：
 
     ```
     echo export ATISTREAMSDKROOT=/opt/AMDAPP/ >> ~/.bashrc 
@@ -217,7 +217,7 @@
     python setup.py install
     ```
     
-0.  构建并安装OpenCL：
+0.  构建并安装 OpenCL：
 
     ```
     cd /tmp/pyrit_src/cpyrit_opencl 
@@ -256,14 +256,14 @@
     CALPP_INC_DIRS.append(os.path.join(CALPP_INC_DIR, 'include/CAL'))
     ```
     
-2.  最后将ATI GPU模块添加到pyrit：
+2.  最后将 ATI GPU 模块添加到 pyrit：
 
     ```
     python setup.py build 
     python setup.py install
     ```
     
-> 为了展示可用的CAL++设备和CPU的核数，我们需要键入下列命令：
+> 为了展示可用的 CAL++设备和 CPU 的核数，我们需要键入下列命令：
 
 > ```
 > pyrit list_cores
@@ -277,9 +277,9 @@
 
 ## 2.4 安装和配置英伟达显卡驱动
 
-这个秘籍中，我们会拥抱CUDA，英伟达的并行计算架构。在CUDA工具包的安装之后，首先会安装英伟达开发者显示驱动。通过使用GPU的威力，这会带来计算性能的戏剧性提升，它们通常用于一些类似密码破解的场合。
+这个秘籍中，我们会拥抱 CUDA，英伟达的并行计算架构。在 CUDA 工具包的安装之后，首先会安装英伟达开发者显示驱动。通过使用 GPU 的威力，这会带来计算性能的戏剧性提升，它们通常用于一些类似密码破解的场合。
 
-> 有关CUDA的更多信息，请浏览[他们的官方网站](http://www.nvidia.com/object/cuda_home_new.html)。
+> 有关 CUDA 的更多信息，请浏览[他们的官方网站](http://www.nvidia.com/object/cuda_home_new.html)。
 
 ### 准备
 
@@ -287,13 +287,13 @@
 
 同时需要在开始之前准备内核头文件，这在第一节中有所涉及。
 
-为了完成英伟达驱动的安装，需要关闭X会话。
+为了完成英伟达驱动的安装，需要关闭 X 会话。
 
 ### 操作步骤
 
 让我们开始安装和配置英伟达显卡驱动：
 
-1.  下载英伟达开发者显示驱动，根据你的CPU架构：
+1.  下载英伟达开发者显示驱动，根据你的 CPU 架构：
     
     ```
     cd /tmp/ 
@@ -309,13 +309,13 @@
     ./NVIDIA-Linux-x86_64-285.05.33.run –kernel-source-path='/usr/src/ linux'
     ```
     
-3.  下载CUDA工具包：
+3.  下载 CUDA 工具包：
 
     ```
     wget http://developer.download.nvidia.com/compute/cuda/4_1/rel/ toolkit/cudatoolkit_4.1.28_linux_64_ubuntu11.04.run
     ```
     
-4.  安装CUDA工具包到`/opt`：
+4.  安装 CUDA 工具包到`/opt`：
 
     ```
     chmod +x cudatoolkit_4.1.28_linux_64_ubuntu11.04.run 
@@ -339,7 +339,7 @@
     apt-get install libssl-dev python-dev python-scapy
     ```
     
-7.  下载并安装GPU增效工具`pyrit`：
+7.  下载并安装 GPU 增效工具`pyrit`：
 
     ```
     svn co http://pyrit.googlecode.com/svn/trunk/ pyrit_src 
@@ -348,7 +348,7 @@
     python setup.py install
     ```
     
-8.  最后，将英伟达GPU模块添加到`pyrit`：
+8.  最后，将英伟达 GPU 模块添加到`pyrit`：
 
     ```
     cd /tmp/pyrit_src/cpyrit_cuda 
@@ -370,7 +370,7 @@
 
 ## 2.5 升级和配置额外的安全工具
 
-这个秘籍中，我们会涉及到升级Kali，以及配置一些额外的工具，它们对于之后的章节和秘籍十分实用。由于Kali的包在发布之间会不断升级，你很快就会发现比起之前在你的DVD中下载好的工具，又提供了一系列新的工具。我们会以升级来开始，之后获得Nessus的激活码，并以安装Squid来结束。
+这个秘籍中，我们会涉及到升级 Kali，以及配置一些额外的工具，它们对于之后的章节和秘籍十分实用。由于 Kali 的包在发布之间会不断升级，你很快就会发现比起之前在你的 DVD 中下载好的工具，又提供了一系列新的工具。我们会以升级来开始，之后获得 Nessus 的激活码，并以安装 Squid 来结束。
 
 ### 操作步骤
 
@@ -394,9 +394,9 @@
     apt-get dist-upgrade
     ```
     
-4.  获得Nessus的激活码，通过在[这里]( http://www.nessus.org/ products/nessus/nessus-plugins/obtain-an-activation-code)注册。
+4.  获得 Nessus 的激活码，通过在[这里]( http://www.nessus.org/ products/nessus/nessus-plugins/obtain-an-activation-code)注册。
 
-5.  通过执行下列命令来激活Nessus：
+5.  通过执行下列命令来激活 Nessus：
 
     ```
     /opt/nessus/bin/nessus-fetch --register A60F-XXXX-XXXX-XXXX-0006 
@@ -404,25 +404,25 @@
     
     其中`A60F-XXXX-XXXX-XXXX-0006`应为你的激活码。
     
-6.  为Nessus Web界面创建账户：
+6.  为 Nessus Web 界面创建账户：
 
     ```
     /opt/nessus/sbin/nessus-adduser
     ```
     
-7.  为了启动Nessus服务器，我们只需要执行下列命令：
+7.  为了启动 Nessus 服务器，我们只需要执行下列命令：
 
     ```
     /etc/init.d/nessusd start
     ```
     
-8.  安装Squid：
+8.  安装 Squid：
 
     ```
     apt-get install squid3 
     ```
     
-9.  阻止Squid在启动时自动运行：
+9.  阻止 Squid 在启动时自动运行：
 
     ```
     update-rc.d -f squid3 remove
@@ -436,13 +436,13 @@
 
 > 其中`<keyword>`是包名称或者正则表达式。
 
-## 2.6 配置ProxyChains
+## 2.6 配置 ProxyChains
 
 这个章节中，我们会强制指定应用的网络连接使用用户定义的代理列表，来打破接受者和发送者之间的直接连接。
 
 ### 操作步骤
 
-1.  打开ProxyChains的配置文件：
+1.  打开 ProxyChains 的配置文件：
 
     ```
     vim /etc/proxychains.conf 
@@ -462,7 +462,7 @@
     proxyresolv www.targethost.com 
     ```
     
-5.  现在可以在我们打算使用的应用上运行ProxyChains，例如`msfconsole`：
+5.  现在可以在我们打算使用的应用上运行 ProxyChains，例如`msfconsole`：
 
     ```
     proxychains msfconsole
@@ -470,27 +470,27 @@
     
 ## 2.7 目录加密
 
-这一章的最后一个秘籍关于信息隐私。我们会使用TrueCrypt通过密钥来隐藏重要和私密的数字信息，远离公众的眼睛。
+这一章的最后一个秘籍关于信息隐私。我们会使用 TrueCrypt 通过密钥来隐藏重要和私密的数字信息，远离公众的眼睛。
 
 ### 操作步骤
 
-1.  通过访问`Applications Menu | Kali | Forensics | Digital Anti Forensics | install truecrypt`来安装TrueCrypt。
+1.  通过访问`Applications Menu | Kali | Forensics | Digital Anti Forensics | install truecrypt`来安装 TrueCrypt。
 
     ![](img/2-7-1.jpg)
     
-    点击`Install TrueCrypt`（安装TrueCrypt）并且遵循屏幕上的指导。
+    点击`Install TrueCrypt`（安装 TrueCrypt）并且遵循屏幕上的指导。
     
-2.  从`Applications Menu | Kali Linux | Forensics | Digital Anti Forensics | truecrypt`运行TrueCrypt，你会看到下面的窗口：
+2.  从`Applications Menu | Kali Linux | Forensics | Digital Anti Forensics | truecrypt`运行 TrueCrypt，你会看到下面的窗口：
 
     ![](img/2-7-2.jpg)
 
-3.  点击`Create Volume`（新建卷）来启动`TrueCrypt Volume Creation Wizard`（TrueCrypt卷创建向导）。
+3.  点击`Create Volume`（新建卷）来启动`TrueCrypt Volume Creation Wizard`（TrueCrypt 卷创建向导）。
 
 4.  保留默认选项并点击`Next`。
 
-5.  选择`Standard TrueCrypt`（标准TrueCrypt）模式并点击`Next`。
+5.  选择`Standard TrueCrypt`（标准 TrueCrypt）模式并点击`Next`。
 
-6.  点击`Select File…`（选择文件）按钮并为新的TrueCrypt卷指定名称和路径。完成后点击`Save`（保存）。
+6.  点击`Select File…`（选择文件）按钮并为新的 TrueCrypt 卷指定名称和路径。完成后点击`Save`（保存）。
 
     ![](img/2-7-3.jpg)
 
@@ -506,9 +506,9 @@
 
 2.  在下个屏幕中，向导会让我们在窗口内移动鼠标，来增加加密密钥的密码强度。完成后点击`Format`（格式化）按钮。
 
-3.  格式化会开始，完成时TrueCrypt的卷就创建好了。按下`OK`或`Exit`（退出）。
+3.  格式化会开始，完成时 TrueCrypt 的卷就创建好了。按下`OK`或`Exit`（退出）。
 
-4.  我们现在回到TrupCrypt窗口。
+4.  我们现在回到 TrupCrypt 窗口。
 
 5.  从列表中选择一个`Slot`（槽）来解密我们的卷，点击`Select File…`（选择文件），并打开我们创建的卷。
 

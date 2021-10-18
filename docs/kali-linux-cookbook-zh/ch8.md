@@ -300,7 +300,7 @@ Hydra 支持许多协议，包括（但不仅限于）FTP、HTTP、HTTPS、MySQL
 
 ## 8.5 使用 John the Ripper 破解 Windows 密码
 
-这个秘籍中，我们会使用 John the Ripper 来破解 Windows 安全访问管理器（SAM）文件。SAM文件储存了目标系统用户的用户名和密码的哈希。出于安全因素，SAM文件使用授权来保护，并且不能在 Windows 系统运行中直接手动打开或复制。
+这个秘籍中，我们会使用 John the Ripper 来破解 Windows 安全访问管理器（SAM）文件。SAM 文件储存了目标系统用户的用户名和密码的哈希。出于安全因素，SAM 文件使用授权来保护，并且不能在 Windows 系统运行中直接手动打开或复制。
 
 ### 准备
 

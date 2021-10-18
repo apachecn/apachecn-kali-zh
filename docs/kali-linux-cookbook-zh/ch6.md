@@ -86,7 +86,7 @@
 
     ![](img/6-2-1.jpg)
 
-2.  在 Armitage的登录界面中，点击`Connect`（连接）按钮。
+2.  在 Armitage 的登录界面中，点击`Connect`（连接）按钮。
 
     ![](img/6-2-2.jpg)
     
@@ -116,7 +116,7 @@
 
 ## 6.3 掌握  Metasploit 控制台（MSFCONSOLE）
 
-这个秘籍中，我们会研究 Metasploit 控制台（MSFCONSOLE）。MSFCONSOLE主要用于管理 Metasploit 数据库，管理会话以及配置和启动 Metasploit 模块。本质上，出于利用漏洞的目的，MSFCONSOLE 能够让你连接到主机，便于你利用它的漏洞。
+这个秘籍中，我们会研究 Metasploit 控制台（MSFCONSOLE）。MSFCONSOLE 主要用于管理 Metasploit 数据库，管理会话以及配置和启动 Metasploit 模块。本质上，出于利用漏洞的目的，MSFCONSOLE 能够让你连接到主机，便于你利用它的漏洞。
 
 你可以使用以下命令来和控制台交互：
 

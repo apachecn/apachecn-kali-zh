@@ -1,4 +1,4 @@
-# 第一章 安装和启动Kali
+# 第一章 安装和启动 Kali
 
 > 作者：Willie L. Pritchett, David De Smet
 
@@ -8,31 +8,31 @@
 
 ## 简介
 
-Kali Linux，简称Kali，是用于安全攻击的最新Linux发行版。它是BackTrack Linux的后继者。不像多数Linux发行版那样，Kali Linux用于渗透测试。渗透测试是一种通过模拟攻击评估计算机系统或网络安全性的方法。在整本书中，我们将会探索一些Kali Linux所提供的工具。
+Kali Linux，简称 Kali，是用于安全攻击的最新 Linux 发行版。它是 BackTrack Linux 的后继者。不像多数 Linux 发行版那样，Kali Linux 用于渗透测试。渗透测试是一种通过模拟攻击评估计算机系统或网络安全性的方法。在整本书中，我们将会探索一些 Kali Linux 所提供的工具。
 
-这一章涉及到Kali Linux在不同场景下的的安装和启动，从插入Kali Linux DVD到配置网络。
+这一章涉及到 Kali Linux 在不同场景下的的安装和启动，从插入 Kali Linux DVD 到配置网络。
 
-对于本书中所有秘籍，我们都要使用以64位GNOME作为窗口管理器（WM）和架构的Kali Linux（[http://www.Kali.org/downloads/](http://www.Kali.org/downloads/)）。然而，使用KDE作为WM的用法并不在这本书里涉及，你应该能够遵循这些秘籍，并没有多少问题。
+对于本书中所有秘籍，我们都要使用以 64 位 GNOME 作为窗口管理器（WM）和架构的 Kali Linux（[http://www.Kali.org/downloads/](http://www.Kali.org/downloads/)）。然而，使用 KDE 作为 WM 的用法并不在这本书里涉及，你应该能够遵循这些秘籍，并没有多少问题。
 
 ## 1.1 安装到硬盘
 
-硬盘的安装是最基本的操作之一。这个任务需要我们不带DVD运行Kali来完成。
+硬盘的安装是最基本的操作之一。这个任务需要我们不带 DVD 运行 Kali 来完成。
 
-> 执行这个秘籍中的步骤会抹掉你的硬盘，并把Kali标记为你电脑上的主操作系统。
+> 执行这个秘籍中的步骤会抹掉你的硬盘，并把 Kali 标记为你电脑上的主操作系统。
 
 ### 准备
 
 在解释整个过程之前，需要满足以下要求：
 
-+ 为KaliLinux的安装准备最小8GB的空闲磁盘空间（然而我们推荐至少25GB来存放这本书中额外的程序和生成的词汇表）。
-+ 最小512MB的内存。
-+ 在[KaliLinux的下载页面](http://www.kali.org/downloads/)下载Kali Linux。
++ 为 KaliLinux 的安装准备最小 8GB 的空闲磁盘空间（然而我们推荐至少 25GB 来存放这本书中额外的程序和生成的词汇表）。
++ 最小 512MB 的内存。
++ 在[KaliLinux 的下载页面](http://www.kali.org/downloads/)下载 Kali Linux。
 
 让我们开始安装吧。
 
 ### 操作步骤
 
-1.  在光驱中插入Kali Linux Live DVD来开始。你会看到它的启动菜单。选择`Graphical install`（图形化安装）。
+1.  在光驱中插入 Kali Linux Live DVD 来开始。你会看到它的启动菜单。选择`Graphical install`（图形化安装）。
 
     ![](img/1-1-1.jpg)
 
@@ -56,7 +56,7 @@ Kali Linux，简称Kali，是用于安全攻击的最新Linux发行版。它是B
 
     ![](img/1-1-6.jpg)
 
-7.  现在你会看到输入root密码的地方，需要输入两次。
+7.  现在你会看到输入 root 密码的地方，需要输入两次。
 
     ![](img/1-1-7.jpg)
 
@@ -72,7 +72,7 @@ Kali Linux，简称Kali，是用于安全攻击的最新Linux发行版。它是B
 
     ![](img/1-1-10.jpg)
 
-1.  下面，你有机会选择三个分区方式之一：所有文件放在一个分区、分离`/home`、以及分离`/home/user/var`和`/tmp`。考虑到Kali用于渗透测试，分区不需要也不必要（即使这对于你的桌面主操作系统是个好主意）。这里我们选择` All files in one partition`（所有文件放在一个分区）并点击`Continue`（继续）。
+1.  下面，你有机会选择三个分区方式之一：所有文件放在一个分区、分离`/home`、以及分离`/home/user/var`和`/tmp`。考虑到 Kali 用于渗透测试，分区不需要也不必要（即使这对于你的桌面主操作系统是个好主意）。这里我们选择` All files in one partition`（所有文件放在一个分区）并点击`Continue`（继续）。
 
     ![](img/1-1-11.jpg)
 
@@ -80,84 +80,84 @@ Kali Linux，简称Kali，是用于安全攻击的最新Linux发行版。它是B
 
     ![](img/1-1-12.jpg)
 
-3.  下面，你会被询问是否希望链接到网络镜像。网络镜像允许你接收到Kali的更新。这里我们选择`Yes`之后点击`Continue`（继续）。
+3.  下面，你会被询问是否希望链接到网络镜像。网络镜像允许你接收到 Kali 的更新。这里我们选择`Yes`之后点击`Continue`（继续）。
 
     ![](img/1-1-13.jpg)
 
-4.  你可以通过点击`Continue`（继续）跳过HTTP代理界面。
+4.  你可以通过点击`Continue`（继续）跳过 HTTP 代理界面。
 
     ![](img/1-1-14.jpg)
 
-5.  最后，你会被询问来安装GRUB启动器到主引导记录（MBR）中。选择`Yes`之后点击`Continue`（继续）。
+5.  最后，你会被询问来安装 GRUB 启动器到主引导记录（MBR）中。选择`Yes`之后点击`Continue`（继续）。
 
     ![](img/1-1-15.jpg)
 
-6.  祝贺你现在完成了Kali Linux的安装！点击`Continue`，系统会重启并展示登录界面。
+6.  祝贺你现在完成了 Kali Linux 的安装！点击`Continue`，系统会重启并展示登录界面。
 
     ![](img/1-1-16.jpg)
 
-## 1.2 安装到U盘或持久存储器中
+## 1.2 安装到 U 盘或持久存储器中
 
-Kali Linux U盘能够持久化储存系统设置，以及在U盘中永久升级和安装新的软件包，并让我们将个人定制的Kali Linux随时带在身上。
+Kali Linux U 盘能够持久化储存系统设置，以及在 U 盘中永久升级和安装新的软件包，并让我们将个人定制的 Kali Linux 随时带在身上。
 
-多亏了Win32 Disk Imager，我们可以为大多数Linux发行版创建可启动的U盘，包括持久化存储的Kali Linux。
+多亏了 Win32 Disk Imager，我们可以为大多数 Linux 发行版创建可启动的 U 盘，包括持久化存储的 Kali Linux。
 
 ### 准备
 
 需要下列工具和准备工作以继续：
 
-+ FAT32格式的U盘，最小8GB。
-+ Kali Linux ISO镜像。
++ FAT32 格式的 U 盘，最小 8GB。
++ Kali Linux ISO 镜像。
 + [Win32 Disk Imager](http://sourceforge.net/projects/win32diskimager/)。
-+ 你可以从[这里](http://www.kali.org/downloads/)下载Kali。
++ 你可以从[这里](http://www.kali.org/downloads/)下载 Kali。
 
 ### 操作步骤
 
-让我们开始讲Kali Linux安装到U盘：
+让我们开始讲 Kali Linux 安装到 U 盘：
 
-1.  插入格式化且可写入的U盘：
+1.  插入格式化且可写入的 U 盘：
 
     ![](img/1-2-1.jpg)
 
 2.  启动 Win32 Disk Imager。
 
-3.  点击目录图表，选择Kali Linux DVD ISO镜像的位置：
+3.  点击目录图表，选择 Kali Linux DVD ISO 镜像的位置：
 
     ![](img/1-2-2.jpg)
 
-4.  确保`Space used to preserve files across reboots`（用于在启动中保存文件的空间）设置为4096。
+4.  确保`Space used to preserve files across reboots`（用于在启动中保存文件的空间）设置为 4096。
 
     ![](img/1-2-3.jpg)
 
-5.  选择我们的U盘，并点击OK按钮来开始创建可启动的U盘：
+5.  选择我们的 U 盘，并点击 OK 按钮来开始创建可启动的 U 盘：
 
 
-6.  当它解压并复制DVD的文件到U盘，以及安装bootloader时，这个过程会花一些时间来完成。
+6.  当它解压并复制 DVD 的文件到 U 盘，以及安装 bootloader 时，这个过程会花一些时间来完成。
 
-7.  安装完成之后，我们就可以重启电脑，从新创建的Kali Linux U盘以持久存储器来启动了。
+7.  安装完成之后，我们就可以重启电脑，从新创建的 Kali Linux U 盘以持久存储器来启动了。
 
     ![](img/1-2-4.jpg)
 
 ## 1.3 在 VirtualBox 中安装
 
-这个秘籍会引导你使用知名的开源虚拟机软件VirtualBox，将Kali Linux安装在一个完全分离的访客操作系统中，它在你的宿主操作系统中。
+这个秘籍会引导你使用知名的开源虚拟机软件 VirtualBox，将 Kali Linux 安装在一个完全分离的访客操作系统中，它在你的宿主操作系统中。
 
 ### 准备
 
 需要满足下列要求：
 
-+ [VirtualBox](https://www.virtualbox.org/wiki/Downloads) 的最新版本（本书编写时为4.2.16）。
++ [VirtualBox](https://www.virtualbox.org/wiki/Downloads) 的最新版本（本书编写时为 4.2.16）。
 + Kali Linux ISO 镜像的副本。你可以在[这里](http://www. Kali.org/downloads/)下载。
 
 ### 操作步骤
 
-让我们在VirtualBox中安装Kali Linux：
+让我们在 VirtualBox 中安装 Kali Linux：
 
-1.  运行VirtualBox，点击`New`（新建）来启动虚拟机向导：
+1.  运行 VirtualBox，点击`New`（新建）来启动虚拟机向导：
 
     ![](img/1-3-1.jpg)
 
-2.  点击`Next`（下一步）按钮，键入虚拟机的名称，并选择OS类型和版本。这里我们选择Linux类型和Ubuntu（64位）作为版本。点击`Next`按钮来继续：
+2.  点击`Next`（下一步）按钮，键入虚拟机的名称，并选择 OS 类型和版本。这里我们选择 Linux 类型和 Ubuntu（64 位）作为版本。点击`Next`按钮来继续：
 
     ![](img/1-3-2.jpg)
 
@@ -167,7 +167,7 @@ Kali Linux U盘能够持久化储存系统设置，以及在U盘中永久升级�
 
     ![](img/1-3-3.jpg)
 
-5.  一个新的向导窗口将会打开，保留默认的VDI文件类型，因为我们并不需要使用其它的虚拟机软件。
+5.  一个新的向导窗口将会打开，保留默认的 VDI 文件类型，因为我们并不需要使用其它的虚拟机软件。
 
 6.  我们会保留默认选项作为虚拟机磁盘存储的详情。点击`Next`来继续：
 
@@ -181,39 +181,39 @@ Kali Linux U盘能够持久化储存系统设置，以及在U盘中永久升级�
 
     ![](img/1-3-5.jpg)
 
-0.  新的虚拟机创建之后，我们将要安装Kali Linux。
+0.  新的虚拟机创建之后，我们将要安装 Kali Linux。
 
-1.  在VirtualBox的主窗口，高亮Kali Linux，之后点击`Settings`（设置）按钮：
+1.  在 VirtualBox 的主窗口，高亮 Kali Linux，之后点击`Settings`（设置）按钮：
 
     ![](img/1-3-6.jpg)
 
-2.  现在基本的安装步骤就完成了，我们需要让你将下载的ISO文件用于虚拟光盘。这会为你节省烧录物理DVD的时间来完成这个安装。在`Settings`界面中，点击`Storage`（存储器）菜单选项：
+2.  现在基本的安装步骤就完成了，我们需要让你将下载的 ISO 文件用于虚拟光盘。这会为你节省烧录物理 DVD 的时间来完成这个安装。在`Settings`界面中，点击`Storage`（存储器）菜单选项：
 
     ![](img/1-3-7.jpg)
 
-3.  下一步，在`Storage Tree`（存储器树形图）下面，高亮`Empty`（空）磁盘图标，它在`IDE Controller`（IDE控制器）的下面。这户选择我们的虚拟CD/DVD ROM驱动器。在屏幕的最右边，在
-`Attributes`底下，点击光盘图表。在上面弹出的菜单上选择你的`Choose a virtual CD/DVD disc file...`（Kali Linux ISO CD/DVD光盘文件）选项，并找到你的ISO。一旦你完成了这些步骤，点击OK按钮。
+3.  下一步，在`Storage Tree`（存储器树形图）下面，高亮`Empty`（空）磁盘图标，它在`IDE Controller`（IDE 控制器）的下面。这户选择我们的虚拟 CD/DVD ROM 驱动器。在屏幕的最右边，在
+`Attributes`底下，点击光盘图表。在上面弹出的菜单上选择你的`Choose a virtual CD/DVD disc file...`（Kali Linux ISO CD/DVD 光盘文件）选项，并找到你的 ISO。一旦你完成了这些步骤，点击 OK 按钮。
 
     ![](img/1-3-8.jpg)
 
-4.  点击Start（开始）按钮，之后点击里面的新窗口来进行安装。安装步骤在1.1节中已经包括了。
+4.  点击 Start（开始）按钮，之后点击里面的新窗口来进行安装。安装步骤在 1.1 节中已经包括了。
 
-    > 安装VirtualBox 扩展包也允许我们通过添加USB2.0（EHCI）、VirtualBox RDP和 Intel PXE boot ROM的支持，来扩展虚拟机的功能。
+    > 安装 VirtualBox 扩展包也允许我们通过添加 USB2.0（EHCI）、VirtualBox RDP 和 Intel PXE boot ROM 的支持，来扩展虚拟机的功能。
 
 ## 1.4 安装  VMware Tools
 
-这个秘籍中，我们会展示如何使用 VMware Tools将Kali Linux安装在虚拟机中。
+这个秘籍中，我们会展示如何使用 VMware Tools 将 Kali Linux 安装在虚拟机中。
 
 ### 准备
 
 需要满足下列要求：
 
-+ 已经安装好的Kali Linux VMware 虚拟机。
++ 已经安装好的 Kali Linux VMware 虚拟机。
 + 网络连接。
 
 ### 操作步骤
 
-让我们开始将Kali Linux 安装到 VMware上：
+让我们开始将 Kali Linux 安装到 VMware 上：
 
 1.  打开你的虚拟机的访客操作系统并连接到互联网，之后打开`Terminal`（终端）窗口，并键入下列命令来准备核心资源：
 
@@ -221,19 +221,19 @@ Kali Linux U盘能够持久化储存系统设置，以及在U盘中永久升级�
     prepare-kernel-sources
     ```
 
-    > 这些命令假设你使用Linux或者Mac OS。你不需要在Windows下执行它们。
+    > 这些命令假设你使用 Linux 或者 Mac OS。你不需要在 Windows 下执行它们。
 
-2.  在VMware Workstaion的菜单栏上，访问`VM | Install VMware Tools…`：
+2.  在 VMware Workstaion 的菜单栏上，访问`VM | Install VMware Tools…`：
 
     ![](img/1-4-1.jpg)
 
-3.  将VMware Tools安装工具复制到临时目录下，之后将当前位置改为目标目录：
+3.  将 VMware Tools 安装工具复制到临时目录下，之后将当前位置改为目标目录：
 
     ```
     cp /media/VMware\ Tools/VMwareTools-8.8.2-590212.tar.gz /tmp/; cd /tmp
     ```
 
-    > 根据你的VMware Tools来替换文件名：`VMwareTools-<version>-<build>.tar.gz`。
+    > 根据你的 VMware Tools 来替换文件名：`VMwareTools-<version>-<build>.tar.gz`。
 
 4.  使用以下命令解压并安装：
 
@@ -241,7 +241,7 @@ Kali Linux U盘能够持久化储存系统设置，以及在U盘中永久升级�
     tar zxpf VMwareTools-8.8.2-590212.tar.gz
     ```
 
-5.  进入VMware Tools的目录中，之后运行安装工具：
+5.  进入 VMware Tools 的目录中，之后运行安装工具：
 
     ```
     cd vmware-tools-distrib/
@@ -254,11 +254,11 @@ Kali Linux U盘能够持久化储存系统设置，以及在U盘中永久升级�
 
 ### 工作原理
 
-在第一步中，我们准备好了核心资源。之后，我们向访客操作系统插入了虚拟的 VMware Tools CD 。接着，我们创建了挂载点，并挂载虚拟CD。我们在临时目录中复制并解压了安装工具。最后我们保留默认配置来运行安装工具。
+在第一步中，我们准备好了核心资源。之后，我们向访客操作系统插入了虚拟的 VMware Tools CD 。接着，我们创建了挂载点，并挂载虚拟 CD。我们在临时目录中复制并解压了安装工具。最后我们保留默认配置来运行安装工具。
 
 ## 1.5 修复启动画面
 
-我们首次启动新安装的Kali Linux系统时，会注意到启动画面消失了。为了手动修复它，我们需要解压`Initrd`，修改它，之后将它再次压缩。幸运的是，有一个由 Mati Aharoni（也称为“muts”，Kali Linux的创造者）编写的自动化bash脚本使这件事变得容易。
+我们首次启动新安装的 Kali Linux 系统时，会注意到启动画面消失了。为了手动修复它，我们需要解压`Initrd`，修改它，之后将它再次压缩。幸运的是，有一个由 Mati Aharoni（也称为“muts”，Kali Linux 的创造者）编写的自动化 bash 脚本使这件事变得容易。
 
 ### 操作步骤
 
@@ -276,13 +276,13 @@ Kali Linux 自带了多种网络服务，它们在多种情况下可能很实用
 
 需要满足下列要求以继续：
 
-+ 带有有效IP地址的网络连接。
++ 带有有效 IP 地址的网络连接。
 
 ### 操作步骤
 
 让我们开始启动默认服务：
 
-1.  启动Apache服务器：
+1.  启动 Apache 服务器：
 
     ```
     service apache2 start
@@ -290,13 +290,13 @@ Kali Linux 自带了多种网络服务，它们在多种情况下可能很实用
 
     我们可以通过浏览本地地址来验证服务器是否打开。
 
-2.  为了启动SSH服务，首次需要生成SSH密钥：
+2.  为了启动 SSH 服务，首次需要生成 SSH 密钥：
 
     ```
     sshd-generate
     ```
 
-3.  启动SSH服务器：
+3.  启动 SSH 服务器：
 
     ```
     service ssh start
@@ -308,13 +308,13 @@ Kali Linux 自带了多种网络服务，它们在多种情况下可能很实用
     netstat -tpan | grep 22
     ```
 
-5.  启动FTP服务器：
+5.  启动 FTP 服务器：
 
     ```
     service pure-ftpd start
     ```
 
-6.  使用下列命令来验证FTP服务器：
+6.  使用下列命令来验证 FTP 服务器：
 
     ```
     netstat -ant | grep 21
@@ -346,11 +346,11 @@ Kali Linux 自带了多种网络服务，它们在多种情况下可能很实用
     update-rc.d –f ssh defaults
     ```
 
-    > 你也可以在Kali Linux中通过`Services`（服务）菜单来完成它。从`Start`（开始）菜单开始，访问`Kali Linux | Services`。
+    > 你也可以在 Kali Linux 中通过`Services`（服务）菜单来完成它。从`Start`（开始）菜单开始，访问`Kali Linux | Services`。
 
 ## 1.7 设置无线网络
 
-最后，我们来到了这一章的最后一个秘籍。这个秘籍中，我们会了解在安全状态下的无线网络连接步骤，通过Wicd Network Manager和提供加密的细节。无线网络的设置允许我们以无线方式使用Kali Linux。在真实的、合乎道德的渗透测试中，我们可以不依赖于网线而自由地使用所有常规桌面。
+最后，我们来到了这一章的最后一个秘籍。这个秘籍中，我们会了解在安全状态下的无线网络连接步骤，通过 Wicd Network Manager 和提供加密的细节。无线网络的设置允许我们以无线方式使用 Kali Linux。在真实的、合乎道德的渗透测试中，我们可以不依赖于网线而自由地使用所有常规桌面。
 
 ### 操作步骤
 
@@ -362,11 +362,11 @@ Kali Linux 自带了多种网络服务，它们在多种情况下可能很实用
     wicd-gtk --no-tray
     ```
 
-2.  Wicd Network Manager会打开，并带有可用网络的列表：
+2.  Wicd Network Manager 会打开，并带有可用网络的列表：
 
     ![](img/1-7-1.jpg)
 
-3.  点击`Properties`（属性）按钮来设定网络细节。完成之后点击OK。
+3.  点击`Properties`（属性）按钮来设定网络细节。完成之后点击 OK。
 
     ![](img/1-7-2.jpg)
 
