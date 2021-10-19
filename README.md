@@ -24,6 +24,16 @@
 +   [精通 Kali Linux 高级渗透测试](docs/master-kali-linux-adv-pentest/SUMMARY.md)
 +   [精通 Kali Linux Web 渗透测试](docs/master-kali-linux-web-pentest/SUMMARY.md)
 +   [Kali Linux Web 渗透测试中文第三版](docs/web-pentest-kali-linux-3e/SUMMARY.md)
++   [BurpSuite 秘籍](docs/burpsuite-cb/SUMMARY.md)
++   [Kali Linux 数字取证](docs/digifore-kali/SUMMARY.md)
++   [Kali Linux AWS 渗透测试实用指南](docs/handson-aws-pentest-kali/SUMMARY.md)
++   [BurpSuite 即时入门](docs/ins-burpsuite-start/SUMMARY.md)
++   [Kali Linux 即时入门](docs/ins-kali/SUMMARY.md)
++   [Kali Linux 无线渗透测试基础知识](docs/kali-wless-pentest-essense/SUMMARY.md)
++   [Nessus 渗透测试实用手册](docs/learn-nessus-pentest/SUMMARY.md)
++   [NMAP6 网络探索和安全审计秘籍](docs/nmap-essense/SUMMARY.md)
++   [NMAP 基础知识](docs/nmap6-net-exp-sec-audit-cb/SUMMARY.md)
++   [保护网络设施：使用 NMAP 和 Nessus7 探索实用网络安全](docs/sec-net-infra/SUMMARY.md)
 
 ## 贡献指南
 
