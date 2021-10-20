@@ -34,6 +34,13 @@
 +   [NMAP6 网络探索和安全审计秘籍](docs/nmap-essense/SUMMARY.md)
 +   [NMAP 基础知识](docs/nmap6-net-exp-sec-audit-cb/SUMMARY.md)
 +   [保护网络设施：使用 NMAP 和 Nessus7 探索实用网络安全](docs/sec-net-infra/SUMMARY.md)
++   [Metasploit 完全指南](docs/comp-metasploit-guide/SUMMARY.md)
++   [BurpSuite 应用渗透测试实用指南](docs/handson-app-pentest-burpsuite/SUMMARY.md)
++   [Metasploit Web 渗透测试实用指南](docs/handson-web-pentest-metasploit/SUMMARY.md)
++   [Metasploit 即时入门](docs/ins-metasploit-start/SUMMARY.md)
++   [Metasploit 利用和开发学习手册](docs/learn-metasploit-exp-dev/SUMMARY.md)
++   [Metasploit 训练营](docs/metasploit-bc/SUMMARY.md)
++   [Metasploit 渗透测试秘籍](docs/metasploit-pentest-cb/SUMMARY.md)
 
 ## 贡献指南
 
