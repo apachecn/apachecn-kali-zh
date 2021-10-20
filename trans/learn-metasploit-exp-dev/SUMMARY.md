@@ -1,3 +1,4 @@
++   [Metasploit 利用和开发学习手册](README.md)
 +   [零、序言](00.md)
 +   [一、实验室设置](01.md)
 +   [二、Metasploit 框架组织](02.md)
@@ -12,4 +13,3 @@
 +   [十一、利用之后——数据透视和网络嗅探](11.md)
 +   [十二、将 Metasploit 用于利用研究](12.md)
 +   [十二、使用社会工程工具包和 Armitage](13.md)
-+   [Metasploit 利用和开发学习手册](README.md)

@@ -1,3 +1,4 @@
++   [Metasploit 训练营](README.md)
 +   [零、前言](0.md)
 +   [一、开始使用 Metasploit](1.md)
 +   [二、识别和扫描目标](2.md)
@@ -6,4 +7,3 @@
 +   [五、使用 Metasploit 测试服务](5.md)
 +   [六、将 Metasploit 用于快节奏的利用](6.md)
 +   [七、使用 Metasploit 利用现实世界的挑战](7.md)
-+   [Metasploit 训练营](README.md)
